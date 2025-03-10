@@ -1,11 +1,11 @@
 // cadastro de pessoa
 // TA FUNCIONAANDO
 
-document.getElementById('product-form').addEventListener('submit', function(e) {
+document.getElementById('cadastro').addEventListener('submit', function(e) {
   e.preventDefault();
 
-  const username = document.getElementById('product-name').value;
-  const password = document.getElementById('product-quantity').value;
+  const username = document.getElementById('user').value;
+  const password = document.getElementById('password').value;
 
   fetch('http://localhost:3000/cadastro', {
     method: 'POST',
@@ -16,7 +16,7 @@ document.getElementById('product-form').addEventListener('submit', function(e) {
   .then(data => {
       if (data.success) {
         alert("Você foi cadastrado");
-        window.location.href = "index2.html";
+        window.location.href = "PagPrincipal.html";
       } else {
         alert("Não foi possível realizar seu cadastro");
       }
