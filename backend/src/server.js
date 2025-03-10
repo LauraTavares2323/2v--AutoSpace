@@ -71,6 +71,22 @@ app.post('/cadastro', (req, res) => {
   });
 });
 
+// rota de cadastro de carro
+app.post('/cadastroCarro', (req, res) => {
+  const { brand, color, placa} = req.body;
+  const query = 'INSERT INTO car (brand, color, placa) VALUES (?, ?, ?)';
+  connection.query(query, [brand, color, placa], (err, result) => {
+    if (err) {
+      return res.status(500).json({ 
+        success: false, 
+        message: 'Erro ao cadastrar.' });
+    }
+    res.json({ 
+      success: true, 
+      message: 'Você foi cadastrado',
+       id: result.insertId });
+  });
+});
 
 
 // rota para apagar o seu carro

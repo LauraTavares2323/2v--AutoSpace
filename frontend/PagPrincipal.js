@@ -16,8 +16,8 @@ async function loadProducts() {
         <td>${car.brand}</td>
         <td>${car.color}</td>
         <td>${car.placa}</td>
-        <button onclick="editCar(${car.id})">Edite seu carro</button>
-        <button onclick="deleteCar(${car.id})">Delete seu carro</button>
+        <button class="botao" onclick="editCar(${car.id})">Edite seu carro</button>
+        <button class="botao" onclick="deleteCar(${car.id})">Delete seu carro</button>
       `;
         tbody.appendChild(row);
     });
